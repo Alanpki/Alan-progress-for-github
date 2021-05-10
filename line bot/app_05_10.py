@@ -57,7 +57,7 @@ def handle_message(event):
         want_coin=input_text[-3:]
         have_change=currency_data["USD"+have_coin]['Exrate']
         want_change=currency_data["USD"+want_coin]['Exrate']
-        need_change=have_change/want_change
+        need_change=want_change/have_change
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="{}換{}=1:{}".format(have_coin,want_coin,need_change)))
